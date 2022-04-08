@@ -1,0 +1,17 @@
+
+import numpy as np
+
+x=np.linspace(0,1,101)
+u=np.zeros(101)
+u[50]=1
+
+for j in range(100):
+    for i in range(1,100):
+        u[i]+=(u[i+1]-2*u[i]+u[i-1])/4
+
+import matplotlib.pyplot as plt
+plt.plot(x,u,lw=3)
+plt.xlabel('The length of the rod',size=18)
+plt.ylabel('Temperature',size=18)
+plt.title('Temp profile after some time',size=20)
+plt.show()        
